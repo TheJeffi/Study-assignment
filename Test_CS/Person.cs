@@ -45,11 +45,11 @@ namespace Test_CS
 
         protected Person CreatePerson(Person person)
         {
-            Console.WriteLine("Введите имя: ");
+            Console.WriteLine("Write firstname: ");
             person._firstname = Console.ReadLine();
-            Console.WriteLine("Введите фамилию: ");
+            Console.WriteLine("Write secondname: ");
             person._secondname = Console.ReadLine();
-            Console.WriteLine("Введите дату рождения: (dd.mm.yyyy)");
+            Console.WriteLine("Write birtday: (dd.mm.yyyy)");
             try
             {
                 person._birthday = DateTime.Parse(Console.ReadLine());
@@ -57,9 +57,9 @@ namespace Test_CS
             catch (FormatException)
             {
                 person._birthday = DateTime.Parse("01.01.1950");
-                Console.WriteLine("Дата написана не верно. Установлена дата рождения: 01.01.1950");
+                Console.WriteLine("The date is spelled incorrectly. Date of birth established: 01.01.1950");
             }
-            Console.WriteLine("Введите пол: (м/ж)");
+            Console.WriteLine("Choose gender: (m/f)");
             try
             {
                 person._gender = char.Parse(Console.ReadLine());
@@ -67,18 +67,18 @@ namespace Test_CS
             catch (FormatException)
             {
                 person._gender = '-';
-                Console.WriteLine("Пол написан не верно. Установлен пол '-'");
+                Console.WriteLine("The gender is spelled incorrectly. The gender is set '-'");
             }
-            Console.WriteLine("Введите вес: ");
+            Console.WriteLine("Write weigth: ");
             person._weigth = byte.Parse(Console.ReadLine());
-            Console.WriteLine("Введите рост: ");
+            Console.WriteLine("Write height: ");
             person._height = byte.Parse(Console.ReadLine());
             return person;
         }
 
         public string GetPersonInfo()
         {
-            return $"{Fullname},Дата рождения: {_birthday.ToShortDateString()}, Возраст: {GetAge()}, Пол: {_gender}, Вес: {_weigth}, Рост: {_height}";
+            return $"{Fullname},Birtday: {_birthday.ToShortDateString()}, Age: {GetAge()}, Gender: {_gender}, Weigth: {_weigth}, Height: {_height}";
         }
     }
 }

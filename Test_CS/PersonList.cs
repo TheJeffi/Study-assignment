@@ -23,7 +23,7 @@ namespace Test_CS
             {
                 Person person = new Person();
                 _persons.Add(CreatePerson(person));
-                Console.WriteLine("Добавить нового пользователя? Y - да, любая кнопка для продолжения..");
+                Console.WriteLine("Add new person? Y - yes, any button to continue..");
                 consoleKey = Console.ReadKey(true).Key;
             } 
         }
@@ -40,7 +40,7 @@ namespace Test_CS
                     childrenCount++;
                 }
             }
-            Console.WriteLine($"Средний вес детей младше 18 лет = {averageWeight / childrenCount}");
+            Console.WriteLine($"Average weight childers < 18 = {averageWeight / childrenCount}");
         }
 
         public  void FindAllThisBirtdayDate(string date)
@@ -54,7 +54,7 @@ namespace Test_CS
                     count++;
                 }
             }
-            Console.WriteLine($"Кол-во людей родившихся {date} = {count}");
+            Console.WriteLine($"Number of peoples born in {date} = {count}");
         }
 
         public void GetSortedList()
