@@ -15,9 +15,21 @@ namespace Test_CS
         private byte _weigth;
         private byte _height;
 
-        public string Firstname { get; set; }
-        public string Secondname { get; set; }
-        public DateTime Birthday { get; set; }
+        public string Firstname 
+        {
+            get => _firstname;
+            set => _firstname = value;
+        }
+        public string Secondname
+        {
+            get => _secondname;
+            set => _firstname = value;
+        }
+        public DateTime Birthday
+        {
+            get => _birthday;
+            set => _birthday = value;
+        }
 
         public char Gender 
         { 
@@ -30,8 +42,16 @@ namespace Test_CS
                 }
             }
         }
-        public byte Weigth { get; set; }
-        public byte Height { get; set; }
+        public byte Weigth
+        {
+            get => _weigth;
+            set => _weigth = value;
+        }
+        public byte Height
+        {
+            get => _height;
+            set => _height = value;
+        }
         public string Fullname => $"{_firstname} {_secondname}";
         public Person(string firstname, string secondname, DateTime birtday, char gender, byte weigth, byte height)
         {
@@ -57,17 +77,17 @@ namespace Test_CS
         protected Person CreatePerson(Person person)
         {
             Console.WriteLine("Write firstname: ");
-            person._firstname = Console.ReadLine();
+            person.Firstname = Console.ReadLine();
             Console.WriteLine("Write secondname: ");
-            person._secondname = Console.ReadLine();
+            person.Secondname = Console.ReadLine();
             Console.WriteLine("Write birtday: (dd.mm.yyyy)");
             try
             {
-                person._birthday = DateTime.Parse(Console.ReadLine());
+                person.Birthday = DateTime.Parse(Console.ReadLine());
             }
             catch (FormatException)
             {
-                person._birthday = DateTime.Parse("01.01.1950");
+                person.Birthday = DateTime.Parse("01.01.1950");
                 Console.WriteLine("The date is spelled incorrectly. Date of birth established: 01.01.1950");
             }
             Console.WriteLine("Choose gender: (m/f)");
@@ -77,13 +97,13 @@ namespace Test_CS
             }
             catch (FormatException)
             {
-                person._gender = '-';
+                person.Gender = '-';
                 Console.WriteLine("The gender is spelled incorrectly. The gender is set '-'");
             }
             Console.WriteLine("Write weigth: ");
-            person._weigth = byte.Parse(Console.ReadLine());
+            person.Weigth = byte.Parse(Console.ReadLine());
             Console.WriteLine("Write height: ");
-            person._height = byte.Parse(Console.ReadLine());
+            person.Height = byte.Parse(Console.ReadLine());
             return person;
         }
 
