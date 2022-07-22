@@ -73,7 +73,7 @@ namespace Test_CS
             Console.WriteLine("Choose gender: (m/f)");
             try
             {
-                person._gender = char.Parse(Console.ReadLine());
+                person.Gender = char.Parse(Console.ReadLine());
             }
             catch (FormatException)
             {
