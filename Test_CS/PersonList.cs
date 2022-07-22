@@ -40,7 +40,7 @@ namespace Test_CS
                     childrenCount++;
                 }
             }
-            Console.WriteLine($"Average weight childers < 18 = {averageWeight / childrenCount}");
+            Console.WriteLine($"Average weight childers less 18 years old = {averageWeight / childrenCount}");
         }
 
         public  void FindAllThisBirtdayDate(string date)
