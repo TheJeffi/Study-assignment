@@ -18,7 +18,18 @@ namespace Test_CS
         public string Firstname { get; set; }
         public string Secondname { get; set; }
         public DateTime Birthday { get; set; }
-        public char Gender { get; set; }
+
+        public char Gender 
+        { 
+            get { return _gender; }
+            set
+            {
+                if(Char.IsLower(value))
+                {
+                    _gender = Char.ToUpper(value);
+                }
+            }
+        }
         public byte Weigth { get; set; }
         public byte Height { get; set; }
         public string Fullname => $"{_firstname} {_secondname}";
